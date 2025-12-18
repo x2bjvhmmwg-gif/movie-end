@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<!-- 문서 타입 선언: HTML5 문서임을 브라우저에 알려줌 -->
+<html lang="ko">
+<!-- 문서의 언어를 한국어로 설정 -->
+<head>
+    <meta charset="UTF-8">
+    <!-- 문자 인코딩을 UTF-8로 설정 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 반응형 화면: 모바일, 태블릿 등에서 화면 크기에 맞춰 줌 -->
+    <title>부트스트랩 활용 연습</title>
+    <!-- 브라우저 탭 제목 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- 부트스트랩 5.3.3 CSS CDN 링크: 클래스 사용 가능 -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Fira Sans", sans-serif;
+        }
+        /* 
+        * : 모든 요소 선택자
+        margin, padding 초기화
+        box-sizing: border-box -> padding, border 포함하여 width 계산
+        font-family: Fira Sans 사용, 없으면 sans-serif
+        */
+        body {
+            background-color: #35495E;
+            color: white;
+        }
+        /*
+        body 배경색 지정 (#35495E), 기본 텍스트 색상 white
+        */
+        a {text-decoration: none;}
+        /*
+        a 태그의 기본 밑줄 제거
+        */
+        input[type="text"]::placeholder {color: #ffffff;}
+        /*
+        input type="text"에서 placeholder 텍스트 색상을 흰색으로 지정
+        */
+    </style>
+</head>
+<body>
+    <header class="text-center bg-dark p-2">
+    <!-- header 영역 시작 -->
+    <!-- class="text-center": 텍스트 가운데 정렬 -->
+    <!-- class="bg-dark": 배경 검정 -->
+    <!-- class="p-2": padding 0.5rem -->
+        <a href="index.html" class="text-decoration-none ">
+        <!-- a 링크: index.html로 이동 -->
+        <!-- class="text-decoration-none": a 태그 밑줄 제거 -->
+            <h1 class="text-white fw-semibold">
+            <!-- h1 제목 -->
+            <!-- class="text-white": 글자색 흰색 -->
+            <!-- class="fw-semibold": font-weight 600 -->
+                <span class="text-info">부트스트랩 </span>연습
+                <!-- span에 class="text-info": 글자색 info (파란색 계열) -->
+            </h1>
+        </a>
+    </header>
+        <main>
+        <!-- 메인 콘텐츠 영역 시작 -->
+            <div class="position-relative">
+            <!-- 부모 div position-relative: 내부 절대 위치 요소 기준 설정 -->
+                <a href="index.html">
+                <!-- 이미지 클릭 시 index.html 이동 -->
+                    <img src="https://mblogthumb-phinf.pstatic.net/MjAyMDEyMjFfMzQg/MDAxNjA4NTM0NzUyMjk3.VUyATzz7Q-92hjRdzmDuJRwlIyY6HnglmdUhokn_JpUg.al41AVhRAZMwJDFljQoAcGKSTGtyh1yhqOC9RjmIbA4g.JPEG.ttott_ttott/common%EF%BC%8D1.jpg?type=w800"
+                    alt="Movie Poster"
+                    class="d-block w-100 position-relative z-0"
+                    style="height: 300px; object-fit: cover;">
+                    <!-- class 설명:
+                        d-block -> display: block
+                        w-100 -> width 100%
+                        position-relative -> 상대 위치 설정
+                        z-0 -> z-index 0
+                    -->
+                    <!-- style 설명:
+                        height: 300px -> 높이 300px
+                        object-fit: cover -> 이미지 비율 유지하며 영역 채움
+                    -->
+                    <div class="position-absolute end-0 start-0 bottom-0 bg-dark bg-opacity-75 p-2 z-1">
+                    <!-- 절대 위치 div -->
+                    <!-- position-absolute -> 절대 위치 -->
+                    <!-- start-0, end-0 -> 좌우 0 -->
+                    <!-- bottom-0 -> 아래쪽 0 -->
+                    <!-- bg-dark -> 배경 검정 -->
+                    <!-- bg-opacity-75 -> 배경 투명도 75% -->
+                    <!-- p-2 -> padding 0.5rem -->
+                    <!-- z-1 -> z-index 1 (이미지 위) -->
+                        <h3 class="text-white mb-3">안녕 베일리</h3>
+                        <!-- h3 제목, class text-white: 글자 흰색, mb-3: margin-bottom 1rem -->
+                        <p class="text-white">
+                        <!-- 문단 텍스트 흰색 -->
+                        “함께라서 행복해” 환생만 벌써 5번째! 도무지 끝날 줄 모르는 ‘베일리’의 삶에 새로운 미션이 생겼다?! 바로 ‘이든’의 작은 베이비 ‘씨제이’를 돌보는 것. “옆에 있어줘서 고마워” 소꿉놀이도 해야 하고 위험한 곳에 들어가면 짖어서 알려줘야 하고, ‘씨제이’와 함께 해야 할 일이 너무나도 많이 남았는데 ‘씨제이’는 ‘베일리’와 ‘이든’의 곁을 떠나 도시로 향한다.
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="container my-4">
+            <!-- container class -> 중앙 정렬, 반응형 padding 적용 -->
+            <!-- my-4 -> margin top/bottom 1.5rem -->
+            <form class="row justify-content-center">
+            <!-- form 시작, row: 부트스트랩 행 -->
+            <!-- justify-content-center -> 가운데 정렬 -->
+                <div class="col-12 text-center">
+                <!-- col-12 -> 작은 화면에서 12칸 전체 사용 -->
+                <!-- text-center -> 텍스트 가운데 정렬 -->
+                    <input type="text"
+                    class="border-0 bg-opacity-50 w-100 shadow-none fs-5 py-2 px-3 mb-3 rounded-3"
+                    style="background-color: #4e7aa8; appearance: none; outline: none;"
+                    placeholder="영화제목 입력(영어)"/>
+                    <!-- input 텍스트 필드 -->
+                    <!-- border-0 -> 테두리 제거 -->
+                    <!-- bg-opacity-50 -> 배경 투명도 50% -->
+                    <!-- w-100 -> width 100% -->
+                    <!-- shadow-none -> 그림자 제거 -->
+                    <!-- fs-5 -> 폰트 크기 1.25rem -->
+                    <!-- py-2 px-3 -> padding y축 0.5rem, x축 1rem -->
+                    <!-- mb-3 -> margin-bottom 1rem -->
+                    <!-- rounded-3 -> border-radius 1rem -->
+                    <!-- style background-color -> 배경색 지정 -->
+                    <!-- appearance:none, outline:none -> 브라우저 기본 스타일 제거 -->
+
+                    <input type="submit"
+                    class="border-0 w-100 bg-primary bg-opacity-75 shadow-none p-3 rounded-3 text-white fs-5 text-uppercase"
+                    style="max-width:300px;" value="검색"/>
+                    <!-- submit 버튼 -->
+                    <!-- border-0 -> 테두리 제거 -->
+                    <!-- w-100 -> 너비 100% -->
+                    <!-- bg-primary -> 부트스트랩 기본 파랑 -->
+                    <!-- bg-opacity-75 -> 배경 투명도 75% -->
+                    <!-- shadow-none -> 그림자 제거 -->
+                    <!-- p-3 -> padding 1rem -->
+                    <!-- rounded-3 -> border-radius 1rem -->
+                    <!-- text-white -> 글자 흰색 -->
+                    <!-- fs-5 -> 폰트 크기 1.25rem -->
+                    <!-- text-uppercase -> 모든 문자 대문자 -->
+                    <!-- style max-width:300px -> 최대 너비 300px -->
+                </div>
+            </form>
+             </div>
+            
+            <div class="row my-2 mx-2">
+            <!-- row class -> 행 구성, my-2 -> margin top/bottom 0.5rem, mx-2 -> margin left/right 0.5rem -->
+                <div class="col-12 col-md-6 px-2 py-3">
+                <!-- col-12 -> 작은 화면에서 12칸 (전체) -->
+                <!-- col-md-6 -> 중간 이상 화면에서 6칸 (반반 나눔) -->
+                <!-- px-2 py-3 -> padding x 0.5rem, y 1rem -->
+                    <a href="movie.html" class="d-flex flex-column h-100">
+                    <!-- a 태그, 클릭 시 movie.html로 이동 -->
+                    <!-- d-flex flex-column -> 세로 정렬 flex -->
+                    <!-- h-100 -> 높이 100% -->
+                        <div class="position-relative d-block">
+                        <!-- position-relative -> 내부 absolute 기준 -->
+                        <!-- d-block -> display block -->
+                            <img src="https://mblogthumb-phinf.pstatic.net/MjAyMDEyMjFfMzQg/MDAxNjA4NTM0NzUyMjk3.VUyATzz7Q-92hjRdzmDuJRwlIyY6HnglmdUhokn_JpUg.al41AVhRAZMwJDFljQoAcGKSTGtyh1yhqOC9RjmIbA4g.JPEG.ttott_ttott/common%EF%BC%8D1.jpg?type=w800"
+                            alt="movie Poster" class="d-block w-100 object-fit-cover" style="height: 375px;"/>
+                            <!-- 이미지: d-block -> block, w-100 -> 너비 100%, object-fit-cover -> 영역 채움, height 375px -->
+                            <div class="position-absolute px-4 py-2 bg-success bg-opacity-75 text-white text-capitalize bottom-0 mb-3">
+                            <!-- 절대 위치 태그: position-absolute, bottom-0 -> 아래쪽 0 -->
+                            <!-- px-4 py-2 -> padding x축 1.5rem, y축 0.5rem -->
+                            <!-- bg-success -> 초록색, bg-opacity-75 -> 투명도 75% -->
+                            <!-- text-white -> 글자 흰색 -->
+                            <!-- text-capitalize -> 첫 글자 대문자 -->
+                            <!-- mb-3 -> margin-bottom 1rem -->
+                                movie
+                            </div>
+                        </div>
+                        <div class="bg-dark bg-opacity-75 px-3 py-1 col-12 rounded-bottom-3 ">
+                        <!-- 아래 정보 div -->
+                        <!-- bg-dark bg-opacity-75 -> 검정 배경 투명도 75% -->
+                        <!-- px-3 py-1 -> padding x축 1rem, y축 0.25rem -->
+                        <!-- col-12 -> width 100% -->
+                        <!-- rounded-bottom-3 -> 아래쪽 border-radius 1rem -->
+                            <p class="text-white bottom-0 mb-1" style="font-size: small;">2019</p>
+                            <!-- p 태그: 글자 흰색, bottom-0 -> 아래쪽 0, mb-1 -> margin-bottom 0.25rem, font-size: small -->
+                            <h3 class="text-white fs-5 g">안녕 베일리</h3>
+                            <!-- h3 제목: 글자 흰색, fs-5 -> 폰트 1.25rem -->
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-md-6 px-2 py-3">
+                <!-- 두 번째 영화 카드 -->
+                    <a href="movie.html" class="d-flex flex-column h-100">
+                        <div class="position-relative d-block">
+                            <img src="https://placehold.co/960x600?text=None" alt="movie Poster"
+                            class="d-block w-100 object-fit-cover" style="height: 375px;"/>
+                            <div class="position-absolute px-4 py-2 bg-success bg-opacity-75 text-white text-capitalize bottom-0 mb-3">
+                                movie
+                            </div>
+                        </div>
+                        <div class="bg-dark bg-opacity-75 px-3 py-1 col-12 rounded-bottom-3 ">
+                            <p class="text-white bottom-0 mb-1" style="font-size: small;">2026/06 예정</p>
+                            <h3 class="text-white fs-5 g">오류</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <hr>
+            <!-- 수평선 -->
+            <div class="d-flex flex-column justify-content-center align-items-center">
+            <!-- flex-column -> 세로 배치, justify-content-center -> 세로 중앙 정렬, align-items-center -> 가로 중앙 정렬 -->
+                <h2>선택한 내용이 없습니다.</h2>
+                <div class="px-3 py-3 m-3 bg-primary bg-opacity-50 bg-dark bg-opacity-50">
+                <!-- px-3 py-3 -> padding x 1rem, y 1rem -->
+                <!-- m-3 -> margin 1rem -->
+                <!-- bg-primary bg-opacity-50 -> 파란색 배경 50% 투명도 -->
+                <!-- bg-dark bg-opacity-50 -> 검정 배경 50% 투명도 겹침 -->
+                    <a href="/연습/2025-12-18/index.html" class="text-white">
+                    <!-- 링크 텍스트 흰색 -->
+                        <p class="m-0"> CSS으로 화면 이동 </p>
+                        <!-- m-0 -> margin 0 -->
+                    </a>
+                </div>
+            </div>
+        </main>
+    
+</body>
+</html>
